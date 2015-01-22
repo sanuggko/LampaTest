@@ -8,11 +8,6 @@ import android.os.Bundle;
 import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.GridLayout;
-import android.widget.GridView;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
 import com.sng.lampatest.R;
 import com.sng.lampatest.SupportClasses.ImageViewerAdapter;
 
@@ -42,7 +37,7 @@ public class ImageViewerActivity extends Activity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.main, menu);
+        getMenuInflater().inflate(R.menu.image_close, menu);
         return true;
     }
 

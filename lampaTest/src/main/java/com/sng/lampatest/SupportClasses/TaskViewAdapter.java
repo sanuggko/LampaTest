@@ -55,8 +55,8 @@ public class TaskViewAdapter extends BaseAdapter {
         TextView taskNumberTxt = (TextView) view.findViewById(R.id.taskNumberTxt);
         TextView smallTaskDescriptionTxt = (TextView) view.findViewById(R.id.smallDescriptionTxt);
 
-        taskNumberTxt.setText(task.getTaskNumber() + (position + 1));
-        smallTaskDescriptionTxt.setText(task.getSmallDescription());
+        taskNumberTxt.setText("Задание № " + (position + 1));
+        smallTaskDescriptionTxt.setText("Название: " +  task.getSmallDescription());
 
         return view;
     }

@@ -12,8 +12,10 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.GridView;
 import android.widget.TextView;
+import com.sng.lampatest.Models.TaskModel;
 import com.sng.lampatest.R;
 import com.sng.lampatest.SupportClasses.GridAdapter;
+import org.w3c.dom.Text;
 
 import java.util.ArrayList;
 
@@ -21,11 +23,10 @@ import java.util.ArrayList;
 public class DescriptionActivity extends Activity {
 
     private TextView taskNumberTxt;
+    private TextView smallDescriptionTxt;
     private TextView fullTaskDescriptionTxt;
 
-    private String taskNumber;
-    private String fullTaskDescription;
-    private String[] tempArray;
+    private TaskModel taskModel;
 
     private GridView gridView;
     private GridAdapter customGridAdapter;
@@ -38,16 +39,17 @@ public class DescriptionActivity extends Activity {
         setContentView(R.layout.description_layout);
 
         taskNumberTxt = (TextView) findViewById(R.id.taskNumberTxt2);
+        smallDescriptionTxt = (TextView) findViewById(R.id.smallDescriptionTxt);
         fullTaskDescriptionTxt = (TextView) findViewById(R.id.fullDescriptionTxt);
 
         Intent intent = getIntent();
-        tempArray = intent.getStringExtra("fullDescription").split("_");
+        Bundle bundle = intent.getExtras();
+        taskModel = (TaskModel) bundle.getParcelable(TaskModel.class.getCanonicalName());
+        int position = bundle.getInt("position");
 
-        taskNumber = tempArray[0];
-        fullTaskDescription = tempArray[1];
-
-        taskNumberTxt.setText(taskNumber);
-        fullTaskDescriptionTxt.setText(fullTaskDescription);
+        taskNumberTxt.setText("Задание № " + (position +1));
+        smallDescriptionTxt.setText("Назавание задачи № " + (position +1) + " : " + taskModel.getSmallDescription());
+        fullTaskDescriptionTxt.setText(taskModel.getFullDescription());
 
         gridView = (GridView) findViewById(R.id.gridView);
         customGridAdapter = new GridAdapter(this, R.layout.custom_grid_layout, initArray());

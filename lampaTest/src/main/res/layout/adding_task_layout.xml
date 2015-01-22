@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ff000000"
+            android:text="Название: "
+            android:id="@+id/descriptionTxt" android:layout_margin="3dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/descriptionEditTxt"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_horizontal" android:width="200dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceSmall"
+            android:textColor="#ff000000"
+            android:text="Полная задача: "
+            android:id="@+id/fullDescriptionTxt1" android:layout_margin="3dp"/>
+    <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/fulldescriptionEditTxt"
+            android:layout_margin="3dp"
+            android:layout_gravity="center_horizontal" android:width="200dp"/>
+    <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Добавить"
+            android:onClick="onClick"
+            android:id="@+id/addTaskBtn"
+            android:layout_gravity="right"/>
+
+</LinearLayout>

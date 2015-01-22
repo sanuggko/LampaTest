@@ -14,6 +14,7 @@
         </activity>
         <activity android:name=".Activities.DescriptionActivity"/>
         <activity android:name=".Activities.ImageViewerActivity"/>
+        <activity android:name=".Activities.AddTaskActivity"/>
     </application>
 
 </manifest>
